@@ -8,6 +8,19 @@ export async function connectDb() {
   }
 
   mongoose.set("strictQuery", true);
-  await mongoose.connect(mongoUri);
+  await mongoose.connect(mongoUri, {
+    serverSelectionTimeoutMS: Number(process.env.MONGO_CONNECT_TIMEOUT_MS || 10000)
+  });
   console.log("MongoDB connected");
+}
+
+export function getDbStatus() {
+  const states = {
+    0: "disconnected",
+    1: "connected",
+    2: "connecting",
+    3: "disconnecting"
+  };
+
+  return states[mongoose.connection.readyState] || "unknown";
 }

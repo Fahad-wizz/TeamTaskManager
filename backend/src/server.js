@@ -14,10 +14,22 @@ if (!process.env.JWT_SECRET) {
   throw new Error("JWT_SECRET is required");
 }
 
-await connectDb();
-
 const app = createApp();
 
-app.listen(port, () => {
+const server = app.listen(port, "0.0.0.0", () => {
   console.log(`Team Task Manager API running on port ${port}`);
 });
+
+connectDb().catch((error) => {
+  console.error(`MongoDB connection failed: ${error.message}`);
+});
+
+function shutdown(signal) {
+  console.log(`${signal} received, shutting down`);
+  server.close(() => {
+    process.exit(0);
+  });
+}
+
+process.on("SIGINT", () => shutdown("SIGINT"));
+process.on("SIGTERM", () => shutdown("SIGTERM"));

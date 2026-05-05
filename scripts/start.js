@@ -4,12 +4,15 @@ const { join } = require("node:path");
 
 const root = join(__dirname, "..");
 const npm = process.platform === "win32" ? "npm.cmd" : "npm";
+const isWindows = process.platform === "win32";
 const railway = Boolean(process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_SERVICE_ID);
 const singleService = railway || process.env.TTM_SINGLE_SERVICE === "true";
 const children = [];
 
 function run(label, args, env = {}) {
-  const child = spawn(npm, args, {
+  const command = isWindows ? "cmd.exe" : npm;
+  const commandArgs = isWindows ? ["/d", "/s", "/c", npm, ...args] : args;
+  const child = spawn(command, commandArgs, {
     cwd: root,
     env: { ...process.env, ...env },
     stdio: "inherit",
@@ -40,7 +43,10 @@ function buildFrontendThen(callback) {
   }
 
   console.log("Frontend dist not found; building before start...");
-  const build = spawn(npm, ["run", "build", "--workspace", "frontend"], {
+  const buildArgs = ["run", "build", "--workspace", "frontend"];
+  const command = isWindows ? "cmd.exe" : npm;
+  const commandArgs = isWindows ? ["/d", "/s", "/c", npm, ...buildArgs] : buildArgs;
+  const build = spawn(command, commandArgs, {
     cwd: root,
     env: process.env,
     stdio: "inherit",
