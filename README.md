@@ -1,183 +1,167 @@
-# Team Task Manager
+# 🚀 Team Task Manager  
+### Full-Stack | Role-Based Access Control | Production Deployment
 
-A production-oriented full-stack Team Task Manager with JWT authentication, MongoDB persistence, project membership, task assignment, analytics, and backend-enforced RBAC.
+<p align="center">
+  <b>Manage projects, assign tasks, and track team progress with secure role-based access</b>
+</p>
 
-Live URL: add your Railway frontend URL here after deployment.
+![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![React](https://img.shields.io/badge/React-Frontend-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![RBAC](https://img.shields.io/badge/Security-RBAC-red)
+![Railway](https://img.shields.io/badge/Deployment-Railway-purple)
+![Status](https://img.shields.io/badge/Status-Live-success)
 
-## Features
+## 🌐 Live Demo
+🔗 https://your-frontend.up.railway.app  
 
-- Signup and login with bcrypt password hashing and JWT auth.
-- Admin and member roles with backend middleware enforcement.
-- Admins can create projects, add/remove members, and create assigned tasks.
-- Members can view their assigned tasks and update task status only.
-- Dashboard analytics for total, completed, pending, and overdue tasks.
-- Overdue task highlighting, status filters, role-based UI, analytics cards, and task title search.
-- Railway-ready backend and frontend start/build setup.
+## 📂 GitHub Repository
+🔗 https://github.com/your-username/TeamTaskManager  
 
-## Tech Stack
+## 🎥 Demo Video
+🔗 (Add your video link here)
+<p align="center">
+  <a href="https://your-frontend.up.railway.app">
+    <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge">
+  </a>
+</p>
 
-- Backend: Node.js, Express, MongoDB, Mongoose
-- Frontend: React, Vite, Tailwind CSS
-- Auth: JWT, bcrypt
-- Deployment: Railway, Docker-compatible services
+# ⚡ Why This Project?
 
-## Project Structure
+In real teams, lack of structured task management leads to:
+- ❌ unclear ownership  
+- ❌ missed deadlines  
+- ❌ poor visibility  
 
-```text
-backend/
-  src/controllers
-  src/middleware
-  src/models
-  src/routes
-  src/validators
-frontend/
-  src/components
-  src/pages
-  src/state
-  src/utils
-scripts/
-```
+This project solves that by introducing:
+- ✅ structured workflows  
+- ✅ role-based permissions  
+- ✅ centralized task tracking
 
-## Local Setup
+# 🧠 Key Highlights
 
-1. Install dependencies:
+- 🔐 Secure Authentication (JWT + bcrypt)  
+- 🧩 Backend-Enforced RBAC (Admin / Member)  
+- 📊 Task Tracking Dashboard  
+- ⚙️ RESTful API Design  
+- 🌐 Fully Deployed on Cloud (Railway)
 
-```bash
+# 📸 Screenshots
+
+## 🔐 Login Page
+![Login](./screenshots/login.png)
+
+## 📊 Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+## 📁 Project Management
+![Projects](./screenshots/projects.png)
+
+## ✅ Task Management
+![Tasks](./screenshots/tasks.png)
+
+# 🏗️ Architecture Overview
+
+Frontend (React)  
+↓  
+Backend API (Express)  
+↓  
+MongoDB Atlas (Database)
+
+- Clean separation of concerns  
+- Scalable API structure  
+- Environment-based configuration
+
+# 🔐 Role-Based Access Control
+
+## 👨‍💼 Admin
+- Create projects  
+- Add/remove members  
+- Assign tasks  
+
+## 👨‍🔧 Member
+- View assigned tasks  
+- Update task status  
+
+> Permissions are enforced at backend level
+
+# 📊 Features
+
+## 🧾 Authentication
+- JWT-based login/signup  
+- Password hashing using bcrypt  
+
+## 📁 Project Management
+- Create projects  
+- Manage team members  
+
+## ✅ Task Management
+- Assign tasks  
+- Status tracking:
+  - Todo  
+  - In Progress  
+  - Done  
+
+## 📈 Dashboard
+- Task overview  
+- Status insights  
+- Overdue task highlighting
+
+# ⚙️ Tech Stack
+
+## Backend
+- Node.js  
+- Express.js  
+- MongoDB (Atlas)  
+- Mongoose  
+- JWT  
+
+## Frontend
+- React (Vite)  
+- Tailwind CSS  
+
+## Deployment
+- Railway
+
+# 🚀 Deployment
+
+- Backend and frontend deployed as separate services  
+- Environment variables managed securely  
+- Cloud database using MongoDB Atlas
+
+# 📦 Local Setup
+
+## Clone Repo
+git clone https://github.com/your-username/TeamTaskManager
+cd TeamTaskManager
+
+## Backend
+cd backend
 npm install
-```
-
-2. Create environment files.
-
-Backend `.env`:
-
-```bash
-MONGO_URI=mongodb://127.0.0.1:27017/team-task-manager
-JWT_SECRET=replace-with-a-long-random-secret
-CLIENT_ORIGIN=http://localhost:5173
-PORT=5000
-```
-
-Frontend `.env`:
-
-```bash
-VITE_API_URL=http://localhost:5000
-```
-
-3. Start the full app from the repository root:
-
-```bash
 npm start
-```
 
-The root start script builds the frontend if needed, starts the backend API, and serves the frontend preview.
+## Frontend
+cd frontend
+npm install
+npm run dev
 
-For development, run each workspace separately:
+# 🎯 Demo Flow
 
-```bash
-npm run dev --workspace backend
-npm run dev --workspace frontend
-```
+1. Login as Admin  
+2. Create Project  
+3. Add Member  
+4. Assign Task  
+5. Login as Member  
+6. Update Task Status  
+7. View Dashboard
 
-## Demo Flow
+# 🙌 Final Thoughts
 
-1. Sign up as the first admin user.
-2. Sign up as a member user in another browser/session.
-3. Admin creates a project.
-4. Admin adds the member by email.
-5. Admin creates a task assigned to that member.
-6. Member logs in and updates the task status.
-7. Dashboard and task counts reflect the latest task state.
+This project demonstrates:
+- Full-stack development  
+- Secure authentication  
+- Role-based access control  
+- Production deployment  
 
-Note: the first user can become admin automatically. After that, public admin signup is blocked unless `ALLOW_ADMIN_SIGNUP=true` is set on the backend.
-
-## API Endpoints
-
-### Auth
-
-- `POST /auth/signup`
-- `POST /auth/login`
-- `GET /auth/me`
-
-### Projects
-
-- `POST /projects` - admin only
-- `GET /projects` - scoped to owned/member projects
-- `POST /projects/add-member` - admin owner only
-- `DELETE /projects/:projectId/members/:userId` - admin owner only
-
-### Tasks
-
-- `POST /tasks` - admin owner only
-- `GET /tasks` - admins see owned project tasks, members see assigned tasks
-- `PATCH /tasks/:id` - status update only
-
-### Dashboard
-
-- `GET /dashboard`
-
-Returns:
-
-```json
-{
-  "stats": {
-    "totalTasks": 0,
-    "completedTasks": 0,
-    "pendingTasks": 0,
-    "overdueTasks": 0
-  },
-  "myTasks": []
-}
-```
-
-## Railway Deployment
-
-You can deploy this as one Railway service or as two services.
-
-### Option A: One Railway Service
-
-Use this when you want the backend and React app served from the same Railway URL.
-
-- Root directory: repository root
-- Build command: `npm install && npm run build`
-- Start command: `npm start`
-- Variables:
-  - `MONGO_URI` or Railway Mongo's `MONGO_URL`
-  - `JWT_SECRET`
-  - `NODE_ENV=production`
-  - `TTM_SINGLE_SERVICE=true` if Railway does not set `RAILWAY_ENVIRONMENT`
-
-The Express server serves `frontend/dist` and the React app calls the API on the same origin.
-
-### Option B: Two Railway Services
-
-Create two Railway services from this repository.
-
-### Backend Service
-
-- Root directory: `backend`
-- Build command: `npm install`
-- Start command: `npm start`
-- Variables:
-  - `MONGO_URI`
-  - `JWT_SECRET`
-  - `CLIENT_ORIGIN` set to the deployed frontend URL
-  - `PORT` supplied by Railway
-
-### Frontend Service
-
-- Root directory: `frontend`
-- Build command: `npm install && npm run build`
-- Start command: `npm start`
-- Variables:
-  - `VITE_API_URL` set to the deployed backend URL
-  - `PORT` supplied by Railway
-
-After deployment, update the backend `CLIENT_ORIGIN` variable to the frontend service URL.
-
-## Security Notes
-
-- Passwords are hashed with bcrypt before persistence.
-- JWT tokens are verified by auth middleware before protected routes.
-- Role checks are enforced by backend middleware.
-- Ownership checks prevent admins from managing projects they did not create.
-- Members can only view and update tasks assigned to them.
+> Built with a focus on real-world engineering practices
