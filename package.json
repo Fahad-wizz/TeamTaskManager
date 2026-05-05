@@ -8,7 +8,10 @@
     "frontend"
   ],
   "scripts": {
-    
+    "start": "node scripts/start.js",
+    "build": "npm run build --workspace frontend",
+    "start:backend": "npm run start --workspace backend",
+    "start:frontend": "npm run preview --workspace frontend"
   },
   "engines": {
     "node": ">=20"
