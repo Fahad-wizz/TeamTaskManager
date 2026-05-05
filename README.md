@@ -21,8 +21,7 @@
 </p>
 
 ## 📂 GitHub Repository
-🔗 [https://github.com/your-username/TeamTaskManager  ](https://github.com/Fahad-wizz/TeamTaskManager)
-
+🔗 https://github.com/Fahad-wizz/TeamTaskManager 
 ## 🎥 Demo Video
 🔗 (Add your video link here)
 
@@ -134,19 +133,22 @@ MongoDB Atlas (Database)
 # 📦 Local Setup
 
 ## Clone Repo
+```
 git clone [https://github.com/your-username/TeamTaskManager](https://github.com/Fahad-wizz/TeamTaskManager.git)
 cd TeamTaskManager
-
+```
 ## Backend
+```
 cd backend
 npm install
 npm start
-
+```
 ## Frontend
+```
 cd frontend
 npm install
 npm run dev
-
+```
 # 🎯 Demo Flow
 
 1. Login as Admin  
