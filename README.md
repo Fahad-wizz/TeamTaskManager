@@ -14,18 +14,18 @@
 ![Status](https://img.shields.io/badge/Status-Live-success)
 
 ## 🌐 Live Demo
-🔗 https://your-frontend.up.railway.app  
-
-## 📂 GitHub Repository
-🔗 https://github.com/your-username/TeamTaskManager  
-
-## 🎥 Demo Video
-🔗 (Add your video link here)
-<p align="center">
-  <a href="https://your-frontend.up.railway.app">
+🔗 <p align="center">
+  <a href="[https://your-frontend.up.railway.app](https://teamtaskmanager-production-8f12.up.railway.app/)">
     <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge">
   </a>
 </p>
+
+## 📂 GitHub Repository
+🔗 [https://github.com/your-username/TeamTaskManager  ](https://github.com/Fahad-wizz/TeamTaskManager)
+
+## 🎥 Demo Video
+🔗 (Add your video link here)
+
 
 # ⚡ Why This Project?
 
@@ -50,16 +50,17 @@ This project solves that by introducing:
 # 📸 Screenshots
 
 ## 🔐 Login Page
-![Login](./screenshots/login.png)
+<img width="1920" height="831" alt="Screenshot (268)" src="https://github.com/user-attachments/assets/7782ca02-c368-4282-bbed-4e968ad62559" />
 
 ## 📊 Dashboard
-![Dashboard](./screenshots/dashboard.png)
+<img width="1920" height="850" alt="Screenshot (265)" src="https://github.com/user-attachments/assets/63fb978f-2332-4b48-ad25-72613f7b7d32" />
 
 ## 📁 Project Management
-![Projects](./screenshots/projects.png)
+<img width="1920" height="841" alt="Screenshot (266)" src="https://github.com/user-attachments/assets/3afb5c14-2a7e-49cd-8f2c-b0163c9996d7" />
 
 ## ✅ Task Management
-![Tasks](./screenshots/tasks.png)
+<img width="1920" height="858" alt="Screenshot (267)" src="https://github.com/user-attachments/assets/22396d44-51fb-4977-aa38-60b5dcdcab92" />
+
 
 # 🏗️ Architecture Overview
 
@@ -133,7 +134,7 @@ MongoDB Atlas (Database)
 # 📦 Local Setup
 
 ## Clone Repo
-git clone https://github.com/your-username/TeamTaskManager
+git clone [https://github.com/your-username/TeamTaskManager](https://github.com/Fahad-wizz/TeamTaskManager.git)
 cd TeamTaskManager
 
 ## Backend
